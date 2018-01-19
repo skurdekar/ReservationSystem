@@ -45,8 +45,10 @@ The application can be run as follows
  
 Once run, the application will prompt you with an input prompt for entering commands to process the reservation
  
-2018-01-19 00:58:16 INFO  TicketServiceImpl: - Created TicketService numSeats: 100, rows: 10, hold timeout(s): 30
-Enter Command( hold [numseats email], reserve [holdId email], available, print, end ): 
+`2018-01-19 00:58:16 INFO  TicketServiceImpl: - Created TicketService numSeats: 100, rows: 10, hold timeout(s): 30
+Enter Command( hold [numseats email], reserve [holdId email], available, print, end ): `
+
+Valid commands are **hold, reserve, available, print and end with their respective options as specified above
 
 The application implements logging using the log4j library. The log configuration is available in log4j.properties
 file in resources directory.
