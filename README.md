@@ -77,6 +77,77 @@ Once packaged as a fat jar it can be run as a standalone java application
 ## Tests
 Describe and show how to run the tests with code examples.
 
+## Sample Run via Console
+    Created TicketService numSeats: 100, rows: 10, hold timeout(s): 30
+    Enter Command( hold [numseats email], reserve [holdId email], available, print, end ): 
+    hold 5 aaa@b.com
+    Hold request successfully returned contiguous seats
+    Hold request succeeded HoldId: 1
+    Enter Command( hold [numseats email], reserve [holdId email], available, print, end ): 
+    print
+
+    HHHHHsssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+
+    Enter Command( hold [numseats email], reserve [holdId email], available, print, end ): 
+    reserve 1 aaa@b.com
+    Reserve Seats success with confirmation: CONF-1
+    Reservation Success conf id :CONF-1
+    Reservation complete Confirmation Code :CONF-1
+    Enter Command( hold [numseats email], reserve [holdId email], available, print, end ): 
+    reserve 7 dddd@gmail.com
+    Reservation attempt unsuccessful. seat hold has expired
+    Enter Command( hold [numseats email], reserve [holdId email], available, print, end ): 
+    print
+
+    XXXXXsssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+
+    Enter Command( hold [numseats email], reserve [holdId email], available, print, end ): 
+    hold 200 ggg@a.com
+    java.lang.IllegalArgumentException: Invalid value for hold seats: 200
+     at com.xyz.reservations.engine.TicketServiceCore.findAndHoldSeats(TicketServiceCore.java:99)
+     at com.xyz.reservations.engine.TicketServiceImpl.findAndHoldSeats(TicketServiceImpl.java:69)
+     at com.xyz.reservations.engine.ConsoleHandler.processCommand(ConsoleHandler.java:44)
+     at com.xyz.reservations.engine.ConsoleHandler.readConsole(ConsoleHandler.java:30)
+     at com.xyz.reservations.engine.ReservationApp.main(ReservationApp.java:19)
+    Enter Command( hold [numseats email], reserve [holdId email], available, print, end ): 
+    hold 2 ggg@a.com
+    Hold request successfully returned contiguous seats
+    Hold request succeeded HoldId: 2
+    Enter Command( hold [numseats email], reserve [holdId email], available, print, end ): 
+    print
+
+    XXXXXHHsss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+
+    Enter Command( hold [numseats email], reserve [holdId email], available, print, end ): 
+    Attempting to release hold: 2
+    Released hold: 2
 
 ## Contributors
 Shailesh Kurdekar (skurdekar@gmail.com)
