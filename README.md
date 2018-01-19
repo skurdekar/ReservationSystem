@@ -22,7 +22,7 @@ The service TicketService provides 3 apis to hold, release and get information o
  returns a confirmation id (String) for the reservation. If the reservation is unsuccessful an empty string "" is returned.
 
 ## API Example
-    `import com.xyz.reservations.engine.ReservationApp
+    import com.xyz.reservations.engine.ReservationApp
     import com.xyz.reservations.engine.TicketService
     import com.xyz.reservations.engine.TicketServiceImpl
 
@@ -35,7 +35,7 @@ The service TicketService provides 3 apis to hold, release and get information o
     
     String confId = impl.reserveSeats(sh.seatHoldId, email)
     
-    (TicketServiceImpl)impl.printSeatMap()`
+    (TicketServiceImpl)impl.printSeatMap()
     
 ## Building and Running the application
 The application can be downloaded using the following command
