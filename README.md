@@ -32,6 +32,18 @@ The service TicketService provides 3 apis to hold, release and get information o
     
     (TicketServiceImpl)impl.printSeatMap()
     
+    XXXXXHHsss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    ssssssssss
+    
+    X indicates reserved seats, H indicate held seats and s indicates vacant seats
     
 ## Building and Running the application
 The application can be downloaded using the following command
