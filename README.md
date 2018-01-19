@@ -10,14 +10,14 @@ The application accepts input via Standard Console. It uses log4j for logging an
 
 ## Using the Service
 The service TicketService provides 3 apis to hold, release and get information on the number of seats available
- - numSeatsAvailable() returns the number of seats currently available in the venue. This is the total number of seats
+ - `numSeatsAvailable()` returns the number of seats currently available in the venue. This is the total number of seats
  minus the number of seats held and reserved
  
- - findAndHoldSeats(numSeats, email) will hold the specified number of seats. Returns a SeatHold object which contains 
+ - `findAndHoldSeats(numSeats, email)` will hold the specified number of seats. Returns a SeatHold object which contains 
  a list of Seat objects(seatList), customer email(customerEmail) and seatHoldId which is a unique identifier (integer) for each 
  successful hold operation. If the hold operation is unsuccessful a -1 is returned for seatHoldId
  
- - reserveSeats(seatHoldId, customerEmail) will reserve the specified number of already held based on seatHoldId and email.
+ - `reserveSeats(seatHoldId, customerEmail)` will reserve the specified number of already held based on seatHoldId and email.
  The customerEmail should match the value specified for for hold operation otherwise the reserve operation will fail. The operation
  returns a confirmation id (String) for the reservation. If the reservation is unsuccessful an empty string "" is returned.
 
