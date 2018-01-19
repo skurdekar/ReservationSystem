@@ -21,6 +21,7 @@ public class ConsoleHandler {
         do {
             try {
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+                Thread.sleep(1000);
                 System.out.println("Enter Command( hold [numseats email], reserve [holdId email], available, print, end ): ");
                 String s = br.readLine();
                 String[] splitInput = s.split(" ");
@@ -41,9 +42,9 @@ public class ConsoleHandler {
                 int numSeats = Integer.parseInt(splitInput[1]);
                 String email = splitInput[2];
                 SeatHold hold = service.findAndHoldSeats(numSeats, email);
-                if (hold != null) {
+                /*if (hold != null) {
                     System.out.println("Hold created HoldId: " + hold.seatHoldId);
-                }
+                }*/
             } else {
                 System.out.println("Invalid number of arguments for hold operation (numseats email)");
             }
@@ -51,7 +52,7 @@ public class ConsoleHandler {
             if (splitInput.length == 2) {
                 int holdId = Integer.parseInt(splitInput[1]);
                 ((TicketServiceImpl)service).releaseHold(holdId);
-                System.out.println("Hold released HoldId: " + holdId);
+                //System.out.println("Hold released HoldId: " + holdId);
             } else {
                 System.out.println("Invalid number of arguments for release operation (holdid)");
             }
@@ -60,14 +61,14 @@ public class ConsoleHandler {
                 int holdId = Integer.parseInt(splitInput[1]);
                 String email = splitInput[2];
                 String reserveConfCode = service.reserveSeats(holdId, email);
-                if (reserveConfCode != null) {
+                /*if (!"".equals(reserveConfCode)) {
                     System.out.println("Reservation complete Confirmation Code :" + reserveConfCode);
-                }
+                }*/
             } else {
                 System.out.println("Invalid number of arguments for release operation (holdid email)");
             }
         } else if ("print".equalsIgnoreCase(command)) {
-            ((TicketServiceImpl)service).printSeatMap();
+            System.out.println(((TicketServiceImpl)service).printSeatMap());
         } else if ("available".equalsIgnoreCase(command)) {
             System.out.println("Available Seats: " + service.numSeatsAvailable());
         } else if ("end".equalsIgnoreCase(command)) {

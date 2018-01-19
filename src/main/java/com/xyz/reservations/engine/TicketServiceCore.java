@@ -142,7 +142,7 @@ public class TicketServiceCore {
         //return seats from contiglist else from freelist, if neither are enough return empty list
         List<Seat> retval = null;
         if (contigFreeSeats.size() == numSeatsToHold) {
-            logger.info("Hold request success");
+            logger.info("Hold request successfully returned contiguous seats");
             retval = contigFreeSeats;
         } else if (freeSeats.size() == numSeatsToHold) {
             logger.warn("Seats found may not be together");

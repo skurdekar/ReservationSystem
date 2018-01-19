@@ -102,9 +102,8 @@ public class TicketServiceImpl implements TicketService {
             if (shf.future != null && !shf.future.isDone()) {
                 shf.future.cancel(true);
             }
-            logger.info("Reservation Success conf id :" + retval);
         }else{
-            logger.error("Reservation attempt unsuccessful. seat hold has expired");
+            logger.error("Reservation attempt unsuccessful. Seats were never held or hold has expired");
         }
         return retval;
     }
@@ -129,8 +128,8 @@ public class TicketServiceImpl implements TicketService {
         }
     }
 
-    public void printSeatMap() {
-        logger.debug(ticketServiceCore.toString());
+    public String printSeatMap() {
+        return ticketServiceCore.toString();
     }
 
     private static void validateEmail(String email){
