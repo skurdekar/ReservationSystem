@@ -76,6 +76,23 @@ Once packaged as a fat jar it can be run as a standalone java application
 
 ## Sample Run on console
 `Created TicketService numSeats: 100, rows: 10, hold timeout(s): 30`
+`Enter Command( hold [numseats email], reserve [holdId email], available, print, end ): `
+`hold 5 aaa@b.com
+Hold request successfully returned contiguous seats
+Hold request succeeded HoldId: 1
+Enter Command( hold [numseats email], reserve [holdId email], available, print, end ): 
+print
+
+HHHHHsssss
+ssssssssss
+ssssssssss
+ssssssssss
+ssssssssss
+ssssssssss
+ssssssssss
+ssssssssss
+ssssssssss
+ssssssssss`
 
 ## Tests
 Describe and show how to run the tests with code examples.
