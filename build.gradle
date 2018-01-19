@@ -1,0 +1,37 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+version = '1.0'
+
+//configure artifactory
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.google.guava:guava:23.0'
+    compile 'log4j:log4j:1.2.17'
+    compile 'commons-logging:commons-logging:1.2'
+    compile 'com.typesafe:config:1.3.0'
+    testCompile 'junit:junit:4.12'
+}
+
+//allow running as a console application from gradle
+run{
+    standardInput = System.in
+}
+
+//allow creation of a fat jar for standalone running capability
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Reservation Application Fat Jar',
+                'Implementation-Version': version,
+                'Main-Class': 'com.mkyong.DateUtils'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+// Define the main class for the application
+mainClassName = 'com.xyz.reservations.ReservationApp'
