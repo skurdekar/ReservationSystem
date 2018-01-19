@@ -39,7 +39,7 @@ The service TicketService provides 3 apis to hold, release and get information o
     
 ## Building and Running the application
 The application can be downloaded using the following command
- - `git clone ....`
+ - `git clone https://github.com/skurdekar/ReservationSystem.git`
  
 The application is packaged with the Gradle Build Tool. It can be built using the following command
  - `gradle build`
