@@ -60,6 +60,9 @@ The application is packaged with the Gradle Build Tool. It can be built using th
 The application can be run as follows
  - `gradle run`
 
+The build can be cleaned as follows
+ - `gradle clean`
+ 
 Once run, the application will prompt you with an input prompt for entering commands to process the reservation
 
 `2018-01-19 00:58:16 INFO  TicketServiceImpl: - Created TicketService numSeats: 100, rows: 10, hold timeout(s): 30`
