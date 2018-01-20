@@ -21,6 +21,13 @@ run{
     standardInput = System.in
 }
 
+test {
+    reports {
+        junitXml.enabled = false
+        html.enabled = true
+    }
+}
+
 //allow creation of a fat jar for standalone running capability
 task fatJar(type: Jar) {
     manifest {

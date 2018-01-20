@@ -5,19 +5,25 @@ import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 
 public class SeatHold {
-    private static Integer holdId = 1;
 
-    public List<Seat> seatList;
+    public Seat[] seatArray;
     public String customerEmail;
     public Integer seatHoldId = null;
 
-    public SeatHold(List<Seat> seatList, String customerEmail) {
-        if(!seatList.isEmpty()) {
-            seatHoldId = holdId++;
-            this.seatList = seatList;
-            this.customerEmail = customerEmail;
-        }else{
-            seatHoldId = -1;
+    public SeatHold(Integer seatHoldId, List<Seat> seatList, String customerEmail) {
+        this.seatHoldId = seatHoldId;
+        this.seatArray = convertListToArray(seatList);
+        this.customerEmail = customerEmail;
+    }
+
+    public Seat[] convertListToArray(List<Seat> seatList){
+        Seat[] seatArray = new Seat[seatList.size()];
+        int index = 0;
+        for(Seat seat: seatList){
+            Seat copy = new Seat(seat.row, seat.column);
+            copy.status = seat.status;
+            seatArray[index++] = copy;
         }
+        return seatArray;
     }
 }
