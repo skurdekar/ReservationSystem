@@ -16,7 +16,7 @@ The service TicketService provides 3 apis to hold, release and get information o
  - `numSeatsAvailable()` returns the number of seats currently available in the venue. This is the total number of seats
  minus the number of seats held and reserved
 
- - `findAndHoldSeats(numSeats, customerEmail)` will hold the specified number of seats. Returns a SeatHold object which contains a Array of Seat objects(seatArrayseatList), customer email(customerEmail) and seatHoldId which is a unique identifier (integer) for each successful hold operation. **If the hold operation is unsuccessful a -1 is returned for seatHoldId
+ - `findAndHoldSeats(numSeats, customerEmail)` will hold the specified number of seats. Returns a SeatHold object which contains a Array of Seat objects(seatArray), customer email(customerEmail) and seatHoldId which is a unique identifier (integer) for each successful hold operation. **If the hold operation is unsuccessful a -1 is returned for seatHoldId
 
  - `reserveSeats(seatHoldId, customerEmail)` will reserve the specified number of already held seats based on seatHoldId and email. The customerEmail should match the value specified for for hold operation otherwise the reserve operation will fail. The operation returns a confirmation id (String) for the reservation. **If the reservation is unsuccessful an empty string "" is returned.
 
