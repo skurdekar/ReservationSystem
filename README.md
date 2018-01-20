@@ -63,6 +63,8 @@ The application can be run as follows
 The build can be cleaned as follows
  - `gradle clean`
  
+*`If gradle is not installed on your system the above commands can be run using gradlew (part of the repo)`
+
 Once run, the application will prompt you with an input prompt for entering commands to process the reservation
 
 `2018-01-19 00:58:16 INFO  TicketServiceImpl: - Created TicketService numSeats: 100, rows: 10, hold timeout(s): 30`
@@ -81,6 +83,7 @@ Alternatively the application can be packaged as a fat jar
 
 Once packaged as a fat jar it can be run as a standalone java application
  - `java -classpath build/libs/ReservationSystem-all-1.0.jar com.xyz.reservations.engine.ReservationApp`
+
 
 ## Tests
  - See ReservationAppTest class for test examples
