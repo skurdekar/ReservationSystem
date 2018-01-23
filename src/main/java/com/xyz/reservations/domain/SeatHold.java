@@ -26,4 +26,14 @@ public class SeatHold {
         }
         return seatArray;
     }
+
+    public String toString(){
+        StringBuilder retval = new StringBuilder();
+        for(int i = 0; i < seatArray.length; i++){
+            retval.append("{" + seatArray[i].row + "," + seatArray[i].column + "}");
+        }
+        retval.append("\n");
+
+        return retval.toString();
+    }
 }
