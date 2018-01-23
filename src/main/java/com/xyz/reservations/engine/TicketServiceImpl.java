@@ -79,7 +79,7 @@ public class TicketServiceImpl implements TicketService {
             }, holdTimeoutSeconds, TimeUnit.SECONDS);
             logger.info("Hold succeeded HoldId: " + si.seatHoldId + ", notifying " + customerEmail);
         }
-        logger.debug("Hold Seats Assigned {row,column}: s" + si.getSeatHold());
+        logger.debug("Hold Seats Assigned {row,column}: " + si.getSeatHold());
 
         return si.getSeatHold();
     }
